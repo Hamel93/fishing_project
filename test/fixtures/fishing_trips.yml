@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lake: one
+  custom_location_name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  fish_species: MyString
+  lure_used: MyString
+  date_fished: 2026-04-21
+  notes: MyText
+
+two:
+  lake: two
+  custom_location_name: MyString
+  latitude: 1.5
+  longitude: 1.5
+  fish_species: MyString
+  lure_used: MyString
+  date_fished: 2026-04-21
+  notes: MyText
