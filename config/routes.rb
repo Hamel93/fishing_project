@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root "pages#home"
-
-  resources :lakes, only: [:index, :show]
-  resources :fishing_trips
+  root "assistant#index"
+  post "/assistant", to: "assistant#create"
 end
