@@ -1,78 +1,23 @@
-<div class="app-shell">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-logo">✦</div>
-      <div>
-        <h1>Fishing AI</h1>
-        <p>Assistant Pêche Québec</p>
+<div class="test-wrap">
+  <h1>Fishing AI Test</h1>
+
+  <div class="messages">
+    <% @messages.each do |message| %>
+      <div class="msg <%= message[:role] %>">
+        <strong><%= message[:role].capitalize %>:</strong>
+        <%= simple_format(message[:content]) %>
       </div>
-    </div>
+    <% end %>
+  </div>
 
-    <nav class="sidebar-nav">
-      <a href="#" class="nav-item active">Assistant</a>
-      <a href="#" class="nav-item">Lacs du Québec</a>
-      <a href="#" class="nav-item">Poissons</a>
-      <a href="#" class="nav-item">Leurres</a>
-      <a href="#" class="nav-item">Techniques</a>
-    </nav>
-
-    <div class="sidebar-footer">
-      <a href="#" class="nav-item">À propos</a>
-      <a href="#" class="nav-item">Paramètres</a>
-    </div>
-  </aside>
-
-  <main class="main-content">
-    <div class="page-header">
-      <h2>Assistant IA</h2>
-      <p>Posez vos questions sur la pêche, les lacs, les poissons et les leurres.</p>
-    </div>
-
-    <section class="chat-card">
-      <div class="chat-card-header">
-        <div class="chat-bot-meta">
-          <div class="chat-bot-icon">✦</div>
-          <div>
-            <h3>Fishing AI</h3>
-            <p>Expert pêche Québec</p>
-          </div>
-        </div>
-        <div class="chat-header-actions">
-          <span>⋯</span>
-          <span>×</span>
-        </div>
-      </div>
-
-      <div class="chat-messages">
-        <% @messages.each do |message| %>
-          <% if message[:role] == "user" %>
-            <div class="message-row user-row">
-              <div class="message-bubble user-bubble">
-                <%= simple_format(message[:content]) %>
-              </div>
-            </div>
-          <% else %>
-            <div class="message-row assistant-row">
-              <div class="assistant-avatar">✦</div>
-              <div class="message-bubble assistant-bubble">
-                <%= simple_format(message[:content]) %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="chat-input-bar">
-        <%= form_with url: "/assistant", method: :post, local: true, class: "chat-form" do %>
-          <input
-            type="text"
-            name="question"
-            placeholder="Posez votre question sur la pêche, les lacs, les poissons ou les leurres..."
-            class="chat-input"
-          >
-          <button type="submit" class="send-button">➤</button>
-        <% end %>
-      </div>
-    </section>
-  </main>
+  <form action="/assistant" method="get" class="ai-form">
+    <input
+      type="text"
+      name="question"
+      class="ai-input"
+      placeholder="Écris ici ta question..."
+      autocomplete="off"
+    >
+    <button type="submit" class="ai-button">Envoyer</button>
+  </form>
 </div>

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root "assistant#index"
-  post "/assistant", to: "assistant#create"
+  get "/assistant", to: "assistant#index"
 end

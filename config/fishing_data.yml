@@ -1,0 +1,102 @@
+fish:
+  dore:
+    aliases:
+      - dore
+      - doré
+      - walleye
+    lures:
+      - jig avec leurre souple
+      - crankbait naturel
+      - cuillere ondulante
+    tips:
+      - actif tot le matin et en fin de journee
+      - aime les structures rocheuses et les cassures
+
+  truite:
+    aliases:
+      - truite
+      - trout
+    lures:
+      - cuillere
+      - spinner
+      - petit poisson nageur
+      - mouche
+    tips:
+      - prefere l eau froide et oxygenee
+      - tres bonne au printemps et a l automne
+
+  brochet:
+    aliases:
+      - brochet
+      - pike
+    lures:
+      - spinnerbait
+      - jerkbait
+      - crankbait
+      - gros leurre souple
+    tips:
+      - aime les herbiers et les bordures
+      - predateur agressif
+
+  saumon:
+    aliases:
+      - saumon
+      - salmon
+    lures:
+      - cuillere lourde
+      - poisson nageur
+      - mouche
+      - leurre metallique
+    tips:
+      - souvent recherche dans des zones a courant
+      - adapter selon la saison et la profondeur
+
+  achigan:
+    aliases:
+      - achigan
+      - bass
+      - smallmouth
+      - largemouth
+    lures:
+      - topwater
+      - crankbait
+      - ver souple
+      - jig
+    tips:
+      - actif pres des structures
+      - bon choix en ete
+
+lakes:
+  - name: Lac Saint-Jean
+    region: Saguenay–Lac-Saint-Jean
+    fish:
+      - dore
+      - brochet
+      - truite
+
+  - name: Lac Memphremagog
+    region: Estrie
+    fish:
+      - truite
+      - saumon
+      - achigan
+
+  - name: Reservoir Gouin
+    region: Mauricie
+    fish:
+      - dore
+      - brochet
+      - truite
+
+  - name: Lac Mistassini
+    region: Nord-du-Quebec
+    fish:
+      - truite
+      - brochet
+
+  - name: Lac Temiscamingue
+    region: Abitibi-Temiscamingue
+    fish:
+      - dore
+      - brochet
+      - achigan
