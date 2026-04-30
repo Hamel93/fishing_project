@@ -1,35 +1,17 @@
 puts "Cleaning database..."
-FishingTrip.destroy_all
-Lake.destroy_all
+Lure.destroy_all
+Fish.destroy_all
 
-puts "Creating lakes..."
+puts "Creating fishes..."
 
-Lake.create!(
-  name: "Lac Saint-Jean",
-  region: "Saguenay–Lac-Saint-Jean",
-  latitude: 48.4333,
-  longitude: -72.0667,
-  fish_data: ["walleye", "northern pike", "lake trout"],
-  lure_data: {
-    "walleye" => ["jig", "soft plastic"],
-    "northern pike" => ["spinnerbait", "crankbait"],
-    "lake trout" => ["spoon", "deep jig"]
-  },
-  description: "Large iconic lake in Quebec."
-)
+trout = Fish.create!(name: "Truite", species: "Eau douce")
+salmon = Fish.create!(name: "Saumon", species: "Rivière")
+pike = Fish.create!(name: "Brochet", species: "Lac")
 
-Lake.create!(
-  name: "Memphrémagog",
-  region: "Estrie",
-  latitude: 45.0000,
-  longitude: -72.2000,
-  fish_data: ["salmon", "trout", "bass"],
-  lure_data: {
-    "salmon" => ["minnow bait", "spoon"],
-    "trout" => ["spinner", "spoon"],
-    "bass" => ["topwater", "soft plastic"]
-  },
-  description: "Popular fishing lake in southern Quebec."
-)
+puts "Creating lures..."
 
-puts "Done."
+Lure.create!(name: "Cuillère argentée", lure_type: "spoon", fish: trout)
+Lure.create!(name: "Leurre souple", lure_type: "soft", fish: pike)
+Lure.create!(name: "Poisson nageur", lure_type: "hardbait", fish: salmon)
+
+puts "Done!"

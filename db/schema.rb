@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_22_003325) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_30_222706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "fish", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.string "species"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "fishing_trips", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -40,5 +47,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_22_003325) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lures", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "fish_id", null: false
+    t.string "lure_type"
+    t.string "name"
+    t.datetime "updated_at", null: false
+    t.index ["fish_id"], name: "index_lures_on_fish_id"
+  end
+
   add_foreign_key "fishing_trips", "lakes"
+  add_foreign_key "lures", "fish"
 end
